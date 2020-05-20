@@ -1,0 +1,32 @@
+{
+  "name": "401_lab19",
+  "version": "1.0.0",
+  "main": "api.js",
+  "scripts": {
+    "start-queue": "node queue-server.js",
+    "start-api": "node api.js",
+    "start-vendor-01": "node vendor-01.js",
+    "start-vendor-02": "node vendor-02.js",
+    "lint": "eslint **/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SianCulligan/401_Lab19.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SianCulligan/401_Lab19/issues"
+  },
+  "homepage": "https://github.com/SianCulligan/401_Lab19#readme",
+  "description": "",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "faker": "^4.1.0",
+    "morgan": "^1.10.0",
+    "socket-io": "^1.0.0",
+    "socket.io": "^2.3.0",
+    "socket.io-client": "^2.3.0"
+  }
+}
