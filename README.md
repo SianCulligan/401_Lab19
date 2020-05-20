@@ -1,5 +1,3 @@
-
-
 # LAB - Class 19
 
 ## Project Name: Message Queues
