@@ -4,18 +4,14 @@
 const io = require('socket.io-client');
 const socket = io.connect('http://localhost:3001');
 
-let flowerOrders = [];
+let deliveredOrders = [];
 
-socket.emit('get-orders', 'flower');
+socket.emit('subscribe', 'flower-vendor');
+socket.emit('getAll', 'flower-vendor');
 
-socket.on('current-orders', (payload) => {
-  console.log('current undelivered orders', payload);
-  flowerOrders = payload;
+socket.on('queue', (payload) => {
+  console.log('current queue', payload);
+  if (payload && payload.length)
+    console.log('Thank you for delivering order', payload[0]);
+  socket.emit('received', 'flower-vendor');
 });
-
-setInterval(() => {
-  if (flowerOrders.length > 0) {
-    console.log('Thank you for delivering order', flowerOrders[0].orderID);
-    socket.emit('flower-order-delivered', flowerOrders[0]);
-  }
-}, 3000);
